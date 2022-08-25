@@ -1,0 +1,14 @@
+* {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+ion-list {
+  height: 100%;
+
+  ion-item {
+    border-radius: 0.5rem;
+    margin-top: 3px;
+
+    height: 8vh;
+  }
+}
