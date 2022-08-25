@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import { Router } from '@angular/router';
+import { LinguagemService } from '../services/linguagem.service';
 
 @Component({
   selector: 'app-tab1',
@@ -30,6 +32,11 @@ export class Tab1Page {
     },
   ];
 
-  constructor() {}
+  constructor(private router: Router, private linguagemService: LinguagemService) {}
+
+  linguagemRoute(linguagem: any) {
+    this.linguagemService.save(linguagem);
+    this.router.navigateByUrl('/linguagem');
+  }
 
 }
