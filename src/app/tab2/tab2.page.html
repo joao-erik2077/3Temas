@@ -7,4 +7,46 @@
 </ion-header>
 
 <ion-content [fullscreen]="true">
+
+  <div class="legenda">
+    <div>
+      <div class="square-red"></div>
+      <p>Não doa nem recebe</p>
+    </div>
+    <div>
+      <div class="square-blue"></div>
+      <p>Apenas doa</p>
+    </div>
+    <div>
+      <div class="square-yellow"></div>
+      <p>Apenas recebe</p>
+    </div>
+    <div>
+      <div class="square-green"></div>
+      <p>Doa e recebe</p>
+    </div>
+  </div>
+
+  <div class="circle-container">
+    <div class="ab-plus blood-type" [style]="'border-color:' + circleColors[0]">AB+</div>
+    <div class="a-plus blood-type" [style]="'border-color:' + circleColors[1]">A+</div>
+    <div class="b-plus blood-type" [style]="'border-color:' + circleColors[2]">B+</div>
+    <div class="o-plus blood-type" [style]="'border-color:' + circleColors[3]">O+</div>
+    <div class="ab-minus blood-type" [style]="'border-color:' + circleColors[4]">AB-</div>
+    <div class="a-minus blood-type" [style]="'border-color:' + circleColors[5]">A-</div>
+    <div class="b-minus blood-type" [style]="'border-color:' + circleColors[6]">B-</div>
+    <div class="o-minus blood-type" [style]="'border-color:' + circleColors[7]">O-</div>
+    <div class="main-blood-type">
+      <ion-select (ionChange)="changeBloodType($event.detail.value)">
+        <ion-select-option>AB+</ion-select-option>
+        <ion-select-option>AB-</ion-select-option>
+        <ion-select-option>A+</ion-select-option>
+        <ion-select-option>A-</ion-select-option>
+        <ion-select-option>B+</ion-select-option>
+        <ion-select-option>B-</ion-select-option>
+        <ion-select-option>O+</ion-select-option>
+        <ion-select-option>O-</ion-select-option>
+      </ion-select>
+    </div>
+  </div>
 </ion-content>

@@ -6,5 +6,12 @@ ion-list {
     margin-top: 3px;
 
     height: 8vh;
+
+    ion-thumbnail {
+      img {
+        height: 80%;
+        width: 80%;
+      }
+    }
   }
 }
