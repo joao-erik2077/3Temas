@@ -10,5 +10,16 @@
 </ion-header>
 
 <ion-content>
+  <ion-card>
+    <img [src]="linguagem.img">
+    <h1>Livros de {{ linguagem.nome }}</h1>
+
+    <ion-item *ngFor="let livro of linguagem.books" lines="full">
+      <ion-thumbnail slot="start">
+        <img [src]="linguagem.img">
+      </ion-thumbnail>
+      <a [href]="livro">{{ livro }}</a>
+    </ion-item>
+  </ion-card>
 
 </ion-content>
