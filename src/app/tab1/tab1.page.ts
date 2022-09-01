@@ -1,6 +1,5 @@
-import { Component } from '@angular/core';
-import { Router } from '@angular/router';
-import { LinguagemService } from '../services/linguagem.service';
+import { Component, ViewChild } from '@angular/core';
+import { IonModal } from '@ionic/angular';
 
 @Component({
   selector: 'app-tab1',
@@ -8,6 +7,8 @@ import { LinguagemService } from '../services/linguagem.service';
   styleUrls: ['tab1.page.scss'],
 })
 export class Tab1Page {
+  @ViewChild(IonModal) modal: IonModal;
+
   public linguagens: any[] = [
     {
       nome: 'Javascript',
@@ -88,14 +89,29 @@ export class Tab1Page {
       ],
     },
   ];
+  public linguagemModal: any = {
+    nome: 'Typescript',
+    img: 'https://cdn.iconscout.com/icon/free/png-256/typescript-1174965.png',
+    books: [
+      {
+        nome: 'Typescript o guia definitivo',
+        link: 'https://oieduardorabelo.medium.com/typescript-o-guia-definitivo-1a63b04259cc',
+      },
+      {
+        nome: 'Começando Typescript',
+        link: 'https://www.maiconsilva.com/starting-typescript/',
+      },
+    ],
+  };
 
-  constructor(
-    private router: Router,
-    private linguagemService: LinguagemService
-  ) {}
+  constructor() {}
 
-  linguagemRoute(linguagem: any) {
-    this.linguagemService.save(linguagem);
-    this.router.navigateByUrl('/linguagem');
+  present() {
+    this.modal.present();
+  }
+
+  linguagemModalChange(linguagem: any) {
+    this.linguagemModal = linguagem;
+    this.present();
   }
 }
