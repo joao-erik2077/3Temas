@@ -89,29 +89,7 @@ export class Tab1Page {
       ],
     },
   ];
-  public linguagemModal: any = {
-    nome: 'Typescript',
-    img: 'https://cdn.iconscout.com/icon/free/png-256/typescript-1174965.png',
-    books: [
-      {
-        nome: 'Typescript o guia definitivo',
-        link: 'https://oieduardorabelo.medium.com/typescript-o-guia-definitivo-1a63b04259cc',
-      },
-      {
-        nome: 'Começando Typescript',
-        link: 'https://www.maiconsilva.com/starting-typescript/',
-      },
-    ],
-  };
 
   constructor() {}
 
-  present() {
-    this.modal.present();
-  }
-
-  linguagemModalChange(linguagem: any) {
-    this.linguagemModal = linguagem;
-    this.present();
-  }
 }
